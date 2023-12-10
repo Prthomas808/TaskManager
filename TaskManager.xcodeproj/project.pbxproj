@@ -9,21 +9,37 @@
 /* Begin PBXBuildFile section */
 		1D40ABA12B26279B001AD111 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D40ABA02B26279B001AD111 /* AppDelegate.swift */; };
 		1D40ABA32B26279B001AD111 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D40ABA22B26279B001AD111 /* SceneDelegate.swift */; };
-		1D40ABA52B26279B001AD111 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D40ABA42B26279B001AD111 /* ViewController.swift */; };
-		1D40ABA82B26279B001AD111 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D40ABA62B26279B001AD111 /* Main.storyboard */; };
 		1D40ABAA2B26279E001AD111 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D40ABA92B26279E001AD111 /* Assets.xcassets */; };
 		1D40ABAD2B26279E001AD111 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D40ABAB2B26279E001AD111 /* LaunchScreen.storyboard */; };
+		1D40ABB62B2627DB001AD111 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D40ABB52B2627DB001AD111 /* HomeVC.swift */; };
+		1D40ABB92B262BF3001AD111 /* AddTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D40ABB82B262BF3001AD111 /* AddTaskVC.swift */; };
+		1D40ABC52B262F76001AD111 /* ReusableAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D40ABBC2B262F76001AD111 /* ReusableAlert.swift */; };
+		1D40ABC62B262F76001AD111 /* ReusableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D40ABBD2B262F76001AD111 /* ReusableButton.swift */; };
+		1D40ABC72B262F76001AD111 /* ReusableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D40ABBE2B262F76001AD111 /* ReusableLabel.swift */; };
+		1D40ABC82B262F76001AD111 /* ReusableTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D40ABBF2B262F76001AD111 /* ReusableTextfield.swift */; };
+		1D40ABC92B262F76001AD111 /* ReusableBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D40ABC02B262F76001AD111 /* ReusableBodyLabel.swift */; };
+		1D40ABCA2B262F76001AD111 /* ReusableSystemImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D40ABC12B262F76001AD111 /* ReusableSystemImage.swift */; };
+		1D40ABCB2B262F76001AD111 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D40ABC22B262F76001AD111 /* ReusableView.swift */; };
+		1D40ABCC2B262F76001AD111 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D40ABC42B262F76001AD111 /* UIViewController+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D40AB9D2B26279B001AD111 /* TaskManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D40ABA02B26279B001AD111 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D40ABA22B26279B001AD111 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1D40ABA42B26279B001AD111 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1D40ABA72B26279B001AD111 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1D40ABA92B26279E001AD111 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D40ABAC2B26279E001AD111 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D40ABAE2B26279E001AD111 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D40ABB52B2627DB001AD111 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		1D40ABB82B262BF3001AD111 /* AddTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskVC.swift; sourceTree = "<group>"; };
+		1D40ABBC2B262F76001AD111 /* ReusableAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableAlert.swift; sourceTree = "<group>"; };
+		1D40ABBD2B262F76001AD111 /* ReusableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableButton.swift; sourceTree = "<group>"; };
+		1D40ABBE2B262F76001AD111 /* ReusableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableLabel.swift; sourceTree = "<group>"; };
+		1D40ABBF2B262F76001AD111 /* ReusableTextfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableTextfield.swift; sourceTree = "<group>"; };
+		1D40ABC02B262F76001AD111 /* ReusableBodyLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableBodyLabel.swift; sourceTree = "<group>"; };
+		1D40ABC12B262F76001AD111 /* ReusableSystemImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableSystemImage.swift; sourceTree = "<group>"; };
+		1D40ABC22B262F76001AD111 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		1D40ABC42B262F76001AD111 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +72,63 @@
 		1D40AB9F2B26279B001AD111 /* TaskManager */ = {
 			isa = PBXGroup;
 			children = (
-				1D40ABA02B26279B001AD111 /* AppDelegate.swift */,
-				1D40ABA22B26279B001AD111 /* SceneDelegate.swift */,
-				1D40ABA42B26279B001AD111 /* ViewController.swift */,
-				1D40ABA62B26279B001AD111 /* Main.storyboard */,
-				1D40ABA92B26279E001AD111 /* Assets.xcassets */,
-				1D40ABAB2B26279E001AD111 /* LaunchScreen.storyboard */,
+				1D40ABBA2B262F35001AD111 /* Views */,
+				1D40ABB72B2627DE001AD111 /* Supporting */,
+				1D40ABB42B2627C2001AD111 /* Controllers */,
 				1D40ABAE2B26279E001AD111 /* Info.plist */,
 			);
 			path = TaskManager;
+			sourceTree = "<group>";
+		};
+		1D40ABB42B2627C2001AD111 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1D40ABB52B2627DB001AD111 /* HomeVC.swift */,
+				1D40ABB82B262BF3001AD111 /* AddTaskVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1D40ABB72B2627DE001AD111 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				1D40ABA02B26279B001AD111 /* AppDelegate.swift */,
+				1D40ABA22B26279B001AD111 /* SceneDelegate.swift */,
+				1D40ABA92B26279E001AD111 /* Assets.xcassets */,
+				1D40ABAB2B26279E001AD111 /* LaunchScreen.storyboard */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		1D40ABBA2B262F35001AD111 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1D40ABBB2B262F76001AD111 /* Components */,
+				1D40ABC32B262F76001AD111 /* Extensions */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1D40ABBB2B262F76001AD111 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1D40ABBC2B262F76001AD111 /* ReusableAlert.swift */,
+				1D40ABBD2B262F76001AD111 /* ReusableButton.swift */,
+				1D40ABBE2B262F76001AD111 /* ReusableLabel.swift */,
+				1D40ABBF2B262F76001AD111 /* ReusableTextfield.swift */,
+				1D40ABC02B262F76001AD111 /* ReusableBodyLabel.swift */,
+				1D40ABC12B262F76001AD111 /* ReusableSystemImage.swift */,
+				1D40ABC22B262F76001AD111 /* ReusableView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		1D40ABC32B262F76001AD111 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1D40ABC42B262F76001AD111 /* UIViewController+Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +191,6 @@
 			files = (
 				1D40ABAD2B26279E001AD111 /* LaunchScreen.storyboard in Resources */,
 				1D40ABAA2B26279E001AD111 /* Assets.xcassets in Resources */,
-				1D40ABA82B26279B001AD111 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +201,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D40ABA52B26279B001AD111 /* ViewController.swift in Sources */,
+				1D40ABB62B2627DB001AD111 /* HomeVC.swift in Sources */,
+				1D40ABC72B262F76001AD111 /* ReusableLabel.swift in Sources */,
+				1D40ABCC2B262F76001AD111 /* UIViewController+Ext.swift in Sources */,
 				1D40ABA12B26279B001AD111 /* AppDelegate.swift in Sources */,
+				1D40ABC62B262F76001AD111 /* ReusableButton.swift in Sources */,
+				1D40ABCB2B262F76001AD111 /* ReusableView.swift in Sources */,
 				1D40ABA32B26279B001AD111 /* SceneDelegate.swift in Sources */,
+				1D40ABC92B262F76001AD111 /* ReusableBodyLabel.swift in Sources */,
+				1D40ABB92B262BF3001AD111 /* AddTaskVC.swift in Sources */,
+				1D40ABC82B262F76001AD111 /* ReusableTextfield.swift in Sources */,
+				1D40ABC52B262F76001AD111 /* ReusableAlert.swift in Sources */,
+				1D40ABCA2B262F76001AD111 /* ReusableSystemImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1D40ABA62B26279B001AD111 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1D40ABA72B26279B001AD111 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1D40ABAB2B26279E001AD111 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -291,7 +355,6 @@
 				INFOPLIST_FILE = TaskManager/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -318,7 +381,6 @@
 				INFOPLIST_FILE = TaskManager/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
