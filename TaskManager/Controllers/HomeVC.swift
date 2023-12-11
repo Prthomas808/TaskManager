@@ -8,11 +8,12 @@
 import UIKit
 
 class HomeVC: UIViewController {
-
+  
   // MARK: Properties
   private let TaskTable = UITableView()
-  private var collectionView: UICollectionView!
-    
+  var collectionView: UICollectionView!
+  private var items: [Task] = []
+  
   // MARK: Lifecyle
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -24,6 +25,7 @@ class HomeVC: UIViewController {
   // MARK: Objc Functions
   @objc func presentAddTask() {
     let vc = AddTaskVC()
+    vc.delegate = self
     let nav = UINavigationController(rootViewController: vc)
     present(nav, animated: true)
   }
@@ -31,7 +33,6 @@ class HomeVC: UIViewController {
   // MARK: Helping Functions
   private func configureNavBar() {
     title = "Task Manager 📝"
-    navigationController?.navigationBar.prefersLargeTitles = true
     navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(presentAddTask))
     navigationController?.navigationBar.tintColor = .label
   }
@@ -39,7 +40,7 @@ class HomeVC: UIViewController {
   private func configureCollectionView() {
     let layout = UICollectionViewFlowLayout()
     layout.scrollDirection = .vertical
-    layout.itemSize = CGSize(width: UIScreen.main.bounds.width - 10, height: 140)
+    layout.itemSize = CGSize(width: UIScreen.main.bounds.width - 10, height: 120)
     
     collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
     view.addSubview(collectionView)
@@ -53,19 +54,27 @@ class HomeVC: UIViewController {
     super.viewDidLayoutSubviews()
     collectionView.frame = view.bounds
   }
+  
 }
 
 extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    15
+    items.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TaskCell.reusableID, for: indexPath) as? TaskCell else { return UICollectionViewCell() }
+    let task = items[indexPath.row]
+    cell.taskTitle.text = task.taskTitle
+    cell.taskNotes.text = task.taskNotes
     return cell
   }
-  
-  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    navigationController?.pushViewController(AddTaskVC(), animated: true)
+}
+
+extension HomeVC: AddTaskDelegate {
+  func didSaveTask(title: String, notes: String) {
+    let newTask = Task(taskTitle: title, taskNotes: notes)
+    items.append(newTask)
+    collectionView.reloadData()
   }
 }

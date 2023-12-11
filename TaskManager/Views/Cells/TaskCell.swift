@@ -16,8 +16,8 @@ class TaskCell: UICollectionViewCell {
   private let containerViewColor: [UIColor] = [.systemRed, .systemBrown, .systemIndigo, .systemBlue, .systemTeal, .systemOrange, .systemTeal, .systemPurple, .systemGreen]
   
   private let taskSystemImage = ReusableSystemImage(systemImage: "circle.inset.filled", preferMultiColor: false, color: .white)
-  private let taskTitle = ReusableLabel(text: "Dentist Appointment".capitalized, fontSize: 18, weight: .semibold, color: .white, numberOfLines: 1)
-  private let taskNotes = ReusableLabel(text: "Make sure you bring your insurance card! Make sure you bring your insurance card! Make sure you bring your insurance card!", fontSize: 14, weight: .light, color: .white, numberOfLines: 2)
+  let taskTitle = ReusableLabel(text: "Dentist Appointment".capitalized, fontSize: 18, weight: .semibold, color: .white, numberOfLines: 1)
+  let taskNotes = ReusableLabel(text: "Make sure that you floss and make sure you bring your insurance card!", fontSize: 14, weight: .light, color: .white, numberOfLines: 2)
   private let deleteButton = UIButton()
   
   // MARK: Lifecyle
@@ -42,7 +42,7 @@ class TaskCell: UICollectionViewCell {
     NSLayoutConstraint.activate([
       containerView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
       containerView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-      containerView.heightAnchor.constraint(equalToConstant: 125),
+      containerView.heightAnchor.constraint(equalToConstant: 100),
       containerView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 10)
     ])
   }
@@ -70,11 +70,11 @@ class TaskCell: UICollectionViewCell {
       taskTitle.leadingAnchor.constraint(equalTo: taskSystemImage.trailingAnchor, constant: 10),
       taskTitle.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10),
       
-      taskNotes.topAnchor.constraint(equalTo: taskTitle.bottomAnchor, constant: 10),
+      taskNotes.topAnchor.constraint(equalTo: taskTitle.bottomAnchor, constant: 5),
       taskNotes.leadingAnchor.constraint(equalTo: taskSystemImage.trailingAnchor, constant: 10),
       taskNotes.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20),
       
-      deleteButton.topAnchor.constraint(equalTo: taskNotes.bottomAnchor, constant: 10),
+      deleteButton.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
       deleteButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -15),
       deleteButton.heightAnchor.constraint(equalToConstant: 20),
       deleteButton.widthAnchor.constraint(equalToConstant: 20),

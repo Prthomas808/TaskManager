@@ -7,17 +7,23 @@
 
 import UIKit
 
-class AddTaskVC: UIViewController {
+protocol AddTaskDelegate: AnyObject {
+  func didSaveTask(title: String, notes: String)
+}
 
+class AddTaskVC: UIViewController {
+  
   // MARK: Properties
   private let toDoLabel = ReusableLabel(text: "TO DO ITEM", fontSize: 14, weight: .light, color: .secondaryLabel, numberOfLines: 1)
-  private let toDoTextfield = ReusableTextfield(placeholder: "Enter Task", keyboardType: .asciiCapable, isSecure: false)
+  let toDoTextfield = ReusableTextfield(placeholder: "Enter Task", keyboardType: .asciiCapable, isSecure: false)
   
   private let notesLabel = ReusableLabel(text: "NOTES", fontSize: 14, weight: .light, color: .secondaryLabel, numberOfLines: 100)
-  private let notesTextView = UITextView()
+  let notesTextView = UITextView()
   
-  private let DateLabel = ReusableLabel(text: "DUE DATE", fontSize: 14, weight: .light, color: .secondaryLabel, numberOfLines: 1)
-  private let datePicker = UIDatePicker()
+  var taskTitle: String?
+  var taskNotes: String?
+  
+  weak var delegate: AddTaskDelegate?
   
   // MARK: Lifecyle
   override func viewDidLoad() {
@@ -26,18 +32,35 @@ class AddTaskVC: UIViewController {
     configureNavBar()
     configureToDoProperties()
     configureNotesViewProperties()
-    configureDatePickerProperties()
     configureKeyboardProperties()
+    
+    if let title = taskTitle, let notes = taskNotes {
+      toDoTextfield.text = title
+      notesTextView.text = notes
+    }
   }
   
   // MARK: Objc Functions
-  @objc func dismissVC() {
+  @objc func cancelTapped() {
     let taskViewIsBeingPresented = presentingViewController is UINavigationController
     
     if taskViewIsBeingPresented {
       dismiss(animated: true)
     } else {
       navigationController?.popViewController(animated: true)
+    }
+  }
+  
+  @objc func saveTapped() {
+    guard let textfield = toDoTextfield.text else { return }
+    guard let notes = notesTextView.text else { return }
+    
+    if textfield.isEmpty {
+      presentAlert(title: "Add A Task", message: "Please make sure you add a task", buttonTitle: "Okay")
+      return
+    } else {
+      delegate?.didSaveTask(title: textfield, notes: notes)
+      dismiss(animated: true)
     }
   }
   
@@ -48,9 +71,10 @@ class AddTaskVC: UIViewController {
   // MARK: Helping Functions
   
   private func configureNavBar() {
-    navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissVC))
-    navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: nil)
+    navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelTapped))
+    navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveTapped))
     navigationController?.navigationBar.tintColor = .label
+    navigationController?.navigationBar.prefersLargeTitles = false
   }
   
   private func configureToDoProperties() {
@@ -93,23 +117,5 @@ class AddTaskVC: UIViewController {
   private func configureKeyboardProperties() {
     let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
     view.addGestureRecognizer(tap)
-  }
-  
-  private func configureDatePickerProperties() {
-    view.addSubview(DateLabel)
-    view.addSubview(datePicker)
-    datePicker.translatesAutoresizingMaskIntoConstraints = false
-    datePicker.preferredDatePickerStyle = .compact
-    datePicker.tintColor = .systemRed
-    
-    NSLayoutConstraint.activate([
-      DateLabel.topAnchor.constraint(equalTo: notesTextView.bottomAnchor, constant: 30),
-      DateLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-      DateLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-      
-      datePicker.topAnchor.constraint(equalTo: DateLabel.bottomAnchor, constant: 10),
-      datePicker.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-      datePicker.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-    ])
   }
 }

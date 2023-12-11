@@ -17,7 +17,7 @@ class ReusableLabel: UILabel {
     fatalError("init(coder:) has not been implemented")
   }
   
-  init(text: String, fontSize: CGFloat, weight: UIFont.Weight, color: UIColor, numberOfLines: Int ) {
+  init(text: String?, fontSize: CGFloat, weight: UIFont.Weight, color: UIColor, numberOfLines: Int ) {
     super.init(frame: .zero)
     self.text = text
     self.font = .systemFont(ofSize: fontSize, weight: weight)

@@ -11,7 +11,7 @@ class ReusableAlert: UIViewController {
   let containerView = ReusableView()
   let alertTitleLabel = ReusableLabel(text: "Error", fontSize: 18, weight: .bold, color: .label, numberOfLines: 1)
   let alertMessageLabel = ReusableBodyLabel(title: "Alert Message", textColor: .secondaryLabel)
-  let actionButton = ReusableButton(buttonTitle: "Ok", textColor: .systemGray5, buttonColor: .systemRed)
+  let actionButton = ReusableButton(buttonTitle: "Ok", textColor: .systemGray5, buttonColor: .white)
   
   var alertTitle: String?
   var alertMessage: String?
@@ -89,6 +89,4 @@ class ReusableAlert: UIViewController {
       alertMessageLabel.bottomAnchor.constraint(equalTo: actionButton.topAnchor, constant: -12)
     ])
   }
-  
-  
 }

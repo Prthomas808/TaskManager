@@ -9,6 +9,10 @@ import Foundation
 
 struct Task {
   let taskTitle: String
-  let taskNotes: String?
-  let dueDate: Date
+  let taskNotes: String
+  
+  init(taskTitle: String, taskNotes: String) {
+          self.taskTitle = taskTitle
+          self.taskNotes = taskNotes
+      }
 }
