@@ -17,13 +17,16 @@ class ReusableView: UIView {
     fatalError("init(coder:) has not been implemented")
   }
   
+  init(borderWidth: CGFloat, cornerRadius: CGFloat) {
+    super.init(frame: .zero)
+    self.layer.borderWidth = borderWidth
+    self.layer.cornerRadius = cornerRadius
+    configure()
+  }
+  
   private func configure() {
     translatesAutoresizingMaskIntoConstraints = false
-    backgroundColor = .systemBackground
-    layer.cornerRadius = 20
-    layer.borderWidth = 2
-    layer.borderColor = UIColor.systemRed.cgColor
-   
+    //backgroundColor = .systemBackground
   }
   
 }

@@ -21,6 +21,8 @@
 		1D40ABCA2B262F76001AD111 /* ReusableSystemImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D40ABC12B262F76001AD111 /* ReusableSystemImage.swift */; };
 		1D40ABCB2B262F76001AD111 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D40ABC22B262F76001AD111 /* ReusableView.swift */; };
 		1D40ABCC2B262F76001AD111 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D40ABC42B262F76001AD111 /* UIViewController+Ext.swift */; };
+		1D40ABCE2B273BB1001AD111 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D40ABCD2B273BB1001AD111 /* TaskCell.swift */; };
+		1D40ABD22B275197001AD111 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D40ABD12B275197001AD111 /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		1D40ABC12B262F76001AD111 /* ReusableSystemImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableSystemImage.swift; sourceTree = "<group>"; };
 		1D40ABC22B262F76001AD111 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		1D40ABC42B262F76001AD111 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		1D40ABCD2B273BB1001AD111 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		1D40ABD12B275197001AD111 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 		1D40AB9F2B26279B001AD111 /* TaskManager */ = {
 			isa = PBXGroup;
 			children = (
+				1D40ABCF2B273F91001AD111 /* Models */,
+				1D40ABC32B262F76001AD111 /* Extensions */,
 				1D40ABBA2B262F35001AD111 /* Views */,
 				1D40ABB72B2627DE001AD111 /* Supporting */,
 				1D40ABB42B2627C2001AD111 /* Controllers */,
@@ -103,8 +109,8 @@
 		1D40ABBA2B262F35001AD111 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1D40ABD02B274BF2001AD111 /* Cells */,
 				1D40ABBB2B262F76001AD111 /* Components */,
-				1D40ABC32B262F76001AD111 /* Extensions */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -129,6 +135,22 @@
 				1D40ABC42B262F76001AD111 /* UIViewController+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1D40ABCF2B273F91001AD111 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1D40ABD12B275197001AD111 /* Task.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1D40ABD02B274BF2001AD111 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1D40ABCD2B273BB1001AD111 /* TaskCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +234,8 @@
 				1D40ABB92B262BF3001AD111 /* AddTaskVC.swift in Sources */,
 				1D40ABC82B262F76001AD111 /* ReusableTextfield.swift in Sources */,
 				1D40ABC52B262F76001AD111 /* ReusableAlert.swift in Sources */,
+				1D40ABCE2B273BB1001AD111 /* TaskCell.swift in Sources */,
+				1D40ABD22B275197001AD111 /* Task.swift in Sources */,
 				1D40ABCA2B262F76001AD111 /* ReusableSystemImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

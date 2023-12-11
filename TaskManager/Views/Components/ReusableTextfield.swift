@@ -30,7 +30,7 @@ class ReusableTextfield: UITextField {
     backgroundColor = .secondarySystemBackground
     layer.cornerRadius = 8
     textColor = .label
-    tintColor = .red
+    tintColor = .label
     
     returnKeyType = .done
     autocorrectionType = .no

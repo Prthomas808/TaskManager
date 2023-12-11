@@ -10,13 +10,13 @@ import UIKit
 class AddTaskVC: UIViewController {
 
   // MARK: Properties
-  private let toDoLabel = ReusableLabel(text: "TO DO ITEM", fontSize: 14, weight: .light, color: .secondaryLabel)
+  private let toDoLabel = ReusableLabel(text: "TO DO ITEM", fontSize: 14, weight: .light, color: .secondaryLabel, numberOfLines: 1)
   private let toDoTextfield = ReusableTextfield(placeholder: "Enter Task", keyboardType: .asciiCapable, isSecure: false)
   
-  private let notesLabel = ReusableLabel(text: "NOTES", fontSize: 14, weight: .light, color: .secondaryLabel)
+  private let notesLabel = ReusableLabel(text: "NOTES", fontSize: 14, weight: .light, color: .secondaryLabel, numberOfLines: 100)
   private let notesTextView = UITextView()
   
-  private let DateLabel = ReusableLabel(text: "DUE DATE", fontSize: 14, weight: .light, color: .secondaryLabel)
+  private let DateLabel = ReusableLabel(text: "DUE DATE", fontSize: 14, weight: .light, color: .secondaryLabel, numberOfLines: 1)
   private let datePicker = UIDatePicker()
   
   // MARK: Lifecyle
@@ -50,7 +50,7 @@ class AddTaskVC: UIViewController {
   private func configureNavBar() {
     navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissVC))
     navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: nil)
-    navigationController?.navigationBar.tintColor = .systemRed
+    navigationController?.navigationBar.tintColor = .label
   }
   
   private func configureToDoProperties() {
@@ -72,6 +72,7 @@ class AddTaskVC: UIViewController {
   private func configureNotesViewProperties() {
     view.addSubview(notesLabel)
     view.addSubview(notesTextView)
+    notesTextView.tintColor = .label
     notesTextView.backgroundColor = .secondarySystemBackground
     notesTextView.layer.cornerRadius = 10
     notesTextView.returnKeyType = .done

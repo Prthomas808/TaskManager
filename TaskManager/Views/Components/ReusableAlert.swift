@@ -9,7 +9,7 @@ import UIKit
 class ReusableAlert: UIViewController {
   
   let containerView = ReusableView()
-  let alertTitleLabel = ReusableLabel(text: "Error", fontSize: 18, weight: .bold, color: .label)
+  let alertTitleLabel = ReusableLabel(text: "Error", fontSize: 18, weight: .bold, color: .label, numberOfLines: 1)
   let alertMessageLabel = ReusableBodyLabel(title: "Alert Message", textColor: .secondaryLabel)
   let actionButton = ReusableButton(buttonTitle: "Ok", textColor: .systemGray5, buttonColor: .systemRed)
   
