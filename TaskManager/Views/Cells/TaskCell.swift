@@ -19,6 +19,8 @@ class TaskCell: UICollectionViewCell {
   let taskTitle = ReusableLabel(text: "Dentist Appointment".capitalized, fontSize: 18, weight: .semibold, color: .white, numberOfLines: 1)
   let taskNotes = ReusableLabel(text: "Make sure that you floss and make sure you bring your insurance card!", fontSize: 14, weight: .light, color: .white, numberOfLines: 2)
   private let deleteButton = UIButton()
+  var deleteCell: (() -> Void)?
+
   
   // MARK: Lifecyle
   override init(frame: CGRect) {
@@ -33,6 +35,10 @@ class TaskCell: UICollectionViewCell {
   }
   
   // MARK: Objc Functions
+  @objc func deleteButtonTapped() {
+    deleteCell?()
+  }
+
   
   // MARK: Helping Functions
   private func configureContainerView() {
@@ -57,6 +63,7 @@ class TaskCell: UICollectionViewCell {
     deleteButton.translatesAutoresizingMaskIntoConstraints = false
     deleteButton.setImage(UIImage(systemName: "trash"), for: .normal)
     deleteButton.tintColor = .white
+    deleteButton.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
   }
   
   private func configureConstraintsInContainerView() {

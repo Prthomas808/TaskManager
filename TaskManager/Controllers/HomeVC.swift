@@ -12,14 +12,21 @@ class HomeVC: UIViewController {
   // MARK: Properties
   private let TaskTable = UITableView()
   var collectionView: UICollectionView!
-  private var items: [Task] = []
+  private let itemsKey = "SavedTasks"
   
+  private var items: [Task] = [] {
+    didSet {
+      saveTasks()
+    }
+  }
+ 
   // MARK: Lifecyle
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .systemBackground
     configureNavBar()
     configureCollectionView()
+    loadTasks()
   }
   
   // MARK: Objc Functions
@@ -55,6 +62,33 @@ class HomeVC: UIViewController {
     collectionView.frame = view.bounds
   }
   
+  private func saveTasks() {
+    do {
+      let data = try JSONEncoder().encode(items)
+      UserDefaults.standard.set(data, forKey: itemsKey)
+    } catch {
+      print("Error encoding tasks: \(error)")
+    }
+  }
+  
+  private func loadTasks() {
+    if let data = UserDefaults.standard.data(forKey: itemsKey) {
+      do {
+        items = try JSONDecoder().decode([Task].self, from: data)
+      } catch {
+        print("Error decoding tasks: \(error)")
+      }
+    }
+  }
+  
+  private func deleteItem(at indexPath: IndexPath) {
+      items.remove(at: indexPath.item)
+      
+      // Animate the deletion
+      collectionView.performBatchUpdates({
+          collectionView.deleteItems(at: [indexPath])
+      }, completion: nil)
+  }
 }
 
 extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -67,11 +101,14 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
     let task = items[indexPath.row]
     cell.taskTitle.text = task.taskTitle
     cell.taskNotes.text = task.taskNotes
+    cell.deleteCell = { [weak self] in
+      self?.deleteItem(at: indexPath)
+    }
     return cell
   }
 }
 
-extension HomeVC: AddTaskDelegate {
+extension HomeVC: AddTaskDelegate {  
   func didSaveTask(title: String, notes: String) {
     let newTask = Task(taskTitle: title, taskNotes: notes)
     items.append(newTask)
