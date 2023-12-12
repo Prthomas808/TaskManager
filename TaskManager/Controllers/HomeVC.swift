@@ -39,7 +39,7 @@ class HomeVC: UIViewController {
   
   // MARK: Helping Functions
   private func configureNavBar() {
-    title = "Task Manager 📝"
+    title = "Task Manager"
     navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(presentAddTask))
     navigationController?.navigationBar.tintColor = .label
   }
